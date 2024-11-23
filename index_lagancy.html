@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>My Personal Website</title>
+    <style>
+        body {
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            padding:20px;
+        }
+        h1 {
+            margin: 0;
+            padding: 20px 60px 20px 20px;
+        }
+        #avatar {
+            border-radius: 40%;
+            height: 100px;
+            width: 100px;
+        }
+        #bio {
+            font-size: 18px;
+            line-height: 1.5;
+            margin: 20px;
+        }
+        #good_deed {
+            font-size: 15px;
+            /*margin: auto;*/
+            margin-top: -60px;
+            margin-left: 20px;
+            text-align: left;
+        }
+        /*#good_deed_text {*/
+        /*    font-size: 14px;*/
+        /*    margin: 0;*/
+        /*    text-align: left;*/
+        /*}*/
+        #good_deed_button {
+            background-image: url('woodfish.png');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: contain;
+            border: none;
+            height: 120px;
+            margin: auto;
+            margin-top: 50px;
+            position: relative;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 120px;
+
+        }
+    </style>
+</head>
+<body>
+<header>
+    <img id="avatar" src="my-photo.png" alt="My Avatar">
+    <h1>Kushr</h1>
+</header>
+<main>
+    <p id="bio"> 爱华为爱功德.</p>
+    <button id="good_deed_button"></button>
+    <p id="good_deed"><span id="good_deed_text"></span></p>
+</main>
+<script>
+    let goodDeedCount = 0;
+    const goodDeedButton = document.querySelector('#good_deed_button');
+    const goodDeedText = document.querySelector('#good_deed_text');
+    goodDeedButton.addEventListener('mousedown', () => {
+        goodDeedButton.style.backgroundImage = "url('woodfish2.png')";
+    });
+    goodDeedButton.addEventListener('mouseup', () => {
+        goodDeedButton.style.backgroundImage = "url('woodfish.png')";
+        goodDeedCount++;
+        goodDeedText.textContent = `功德+${goodDeedCount}`;
+    });
+</script>
+</body>
+</html>
